@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { VantResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite';
+import { viteMockServe } from 'vite-plugin-mock'
 // import { viteExternalsPlugin } from 'vite-plugin-externals';
 
 // https://vitejs.dev/config/
@@ -20,6 +21,10 @@ export default defineConfig({
       resolvers: [VantResolver()],
       dts: 'src/auto-import.d.ts'
     }),
+    viteMockServe({
+      mockPath: './src/mock/source',
+      localEnabled: true
+    })
     // viteExternalsPlugin({
     //   vue: 'Vue'
     // })

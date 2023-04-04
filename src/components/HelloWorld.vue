@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { isEqual } from 'lodash';
+import axios from 'axios'
 
 defineProps<{ msg: string }>()
-
+onMounted(() => {
+  axios.get('/api/getUserInfo').then((res) => {
+    console.log(res)
+  })
+})
 const count = ref(0)
 </script>
 
