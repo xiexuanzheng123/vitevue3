@@ -11,7 +11,7 @@ const count = ref(0)
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
-    <p>{{ isEqual(1, 2) }}</p>
+    <p>{{ isEqual(1, 1) }}</p>
     <CountA v-if="count % 2 === 0" />
     <CountB v-else />
     <Index />
